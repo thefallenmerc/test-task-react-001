@@ -46,6 +46,8 @@
             });
         }
     }
-
-    // register();
+    // register the service worker in production only
+    @if(App::environment('production'))
+    register();
+    @endif
 </script>

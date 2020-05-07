@@ -2,6 +2,31 @@
   background-color: #3594fa;
 }
 
+.spinner {
+  -webkit-animation: spinner 0.75s ease-in-out infinite;
+          animation: spinner 0.75s ease-in-out infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 html {
   font-size: 17px;
   letter-spacing: 1.5px;

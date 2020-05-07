@@ -6,6 +6,7 @@ export default function HomePage({ items = [] }) {
         <div className="HomePage p-2 flex flex-wrap justify-center md:pb-20 pb-12">
             {
                 items.map(item => (
+
                     <div key={item.id} className="ItemCard m-2 shadow rounded-lg overflow-hidden border border-b-0">
                         {
                             item.status === 0 ?

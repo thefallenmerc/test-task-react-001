@@ -39,7 +39,7 @@ function Sidebar({ isSidebarVisible, setIsSidebarVisible }) {
                     </span>
                 </div>
                 <div className="px-4 py-2">
-                    Filters will come here
+                    TODO: Filters
                     </div>
             </div>
         </div>

@@ -58823,6 +58823,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/fontawesome-svg-core */ "./node_modules/@fortawesome/fontawesome-svg-core/index.es.js");
 /* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
 /* harmony import */ var _pages_home_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/home.page */ "./resources/js/pages/home.page.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _loader_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./loader.component */ "./resources/js/components/loader.component.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
 
 
 
@@ -58831,71 +58848,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_4__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faCheckSquare"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faCertificate"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faRupeeSign"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faMapMarkerAlt"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faWallet"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faChartLine"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faCoins"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faFilter"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faBars"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faTimes"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faBuilding"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faWarehouse"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faSnowflake"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faHome"]);
-var items = [{
-  id: "PROPID1",
-  status: 0,
-  // 0 for fullfunded, 1 for waitlist // have used so on assumption
-  cost: "11,500",
-  area: "39,443",
-  name: "IBC Knowledge Park III",
-  address: "Banerghatta Road, Jalian Wala Bagh, Near Hotel Rassion Blue, Bangalore - 140012",
-  images: ["https://images.unsplash.com/photo-1431512284068-4c4002298068?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80", "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80", "https://images.unsplash.com/photo-1562839492-20a189fafbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"],
-  fundingPercentage: "100",
-  investorsCount: "163",
-  daysRemaining: "25",
-  rentalYield: "9.11",
-  returnTarget: "18.14",
-  minimumInvestment: "25,00,00"
-}, {
-  id: "PROPID1",
-  status: 1,
-  // 0 for fullfunded, 1 for waitlist // have used so on assumption
-  cost: "11,500",
-  area: "39,443",
-  name: "IBC Knowledge Park III",
-  address: "Banerghatta Road, Jalian Wala Bagh, Near Hotel Rassion Blue, Bangalore - 140012",
-  images: ["https://images.unsplash.com/photo-1431512284068-4c4002298068?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80", "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80", "https://images.unsplash.com/photo-1562839492-20a189fafbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"],
-  fundingPercentage: "100",
-  investorsCount: "163",
-  daysRemaining: "25",
-  rentalYield: "9.11",
-  returnTarget: "18.14",
-  minimumInvestment: "25,00,00"
-}, {
-  id: "PROPID1",
-  status: 1,
-  // 0 for fullfunded, 1 for waitlist // have used so on assumption
-  cost: "11,500",
-  area: "39,443",
-  name: "IBC Knowledge Park III",
-  address: "Banerghatta Road, Jalian Wala Bagh, Near Hotel Rassion Blue, Bangalore - 140012",
-  images: ["https://images.unsplash.com/photo-1431512284068-4c4002298068?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80", "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80", "https://images.unsplash.com/photo-1562839492-20a189fafbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"],
-  fundingPercentage: "100",
-  investorsCount: "163",
-  daysRemaining: "25",
-  rentalYield: "9.11",
-  returnTarget: "18.14",
-  minimumInvestment: "25,00,00"
-}, {
-  id: "PROPID1",
-  status: 1,
-  // 0 for fullfunded, 1 for waitlist // have used so on assumption
-  cost: "11,500",
-  area: "39,443",
-  name: "IBC Knowledge Park III",
-  address: "Banerghatta Road, Jalian Wala Bagh, Near Hotel Rassion Blue, Bangalore - 140012",
-  images: ["https://images.unsplash.com/photo-1431512284068-4c4002298068?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80", "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80", "https://images.unsplash.com/photo-1562839492-20a189fafbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"],
-  fundingPercentage: "100",
-  investorsCount: "163",
-  daysRemaining: "25",
-  rentalYield: "9.11",
-  returnTarget: "18.14",
-  minimumInvestment: "25,00,00"
-}];
 function Root() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      _useState2 = _slicedToArray(_useState, 2),
+      isLoading = _useState2[0],
+      setIsLoading = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      items = _useState4[0],
+      setItems = _useState4[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    axios__WEBPACK_IMPORTED_MODULE_7___default.a.get('/api/items').then(function (response) {
+      setItems(response.data);
+    })["catch"](function (err) {
+      console.error('Some error occurred in fetching data!');
+    })["finally"](function () {
+      setIsLoading(false);
+    });
+  }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "root"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_component__WEBPACK_IMPORTED_MODULE_2__["Navbar"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pages_home_page__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_component__WEBPACK_IMPORTED_MODULE_2__["Navbar"], null), isLoading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_loader_component__WEBPACK_IMPORTED_MODULE_8__["Loader"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pages_home_page__WEBPACK_IMPORTED_MODULE_6__["default"], {
     items: items
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer_component__WEBPACK_IMPORTED_MODULE_3__["Footer"], null));
 }
@@ -58947,11 +58922,11 @@ function FooterIcon(_ref) {
       className = _ref$className === void 0 ? "" : _ref$className;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "/",
-    className: "FooterIcon text-white flex flex-col items-center md:py-3 py-1 " + className
+    className: "FooterIcon text-white flex flex-col items-center md:py-3 py-2 " + className
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"], {
     icon: icon
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "mt-2"
+    className: "md:mt-2"
   }, text));
 }
 
@@ -58961,7 +58936,7 @@ function FooterIcon(_ref) {
 /*!******************************************!*\
   !*** ./resources/js/components/index.js ***!
   \******************************************/
-/*! exports provided: Root, Navbar, Footer */
+/*! exports provided: Root, Navbar, Loader, Footer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58972,12 +58947,65 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _navbar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navbar.component */ "./resources/js/components/navbar.component.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Navbar", function() { return _navbar_component__WEBPACK_IMPORTED_MODULE_1__["Navbar"]; });
 
-/* harmony import */ var _footer_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./footer.component */ "./resources/js/components/footer.component.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Footer", function() { return _footer_component__WEBPACK_IMPORTED_MODULE_2__["Footer"]; });
+/* harmony import */ var _loader_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./loader.component */ "./resources/js/components/loader.component.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Loader", function() { return _loader_component__WEBPACK_IMPORTED_MODULE_2__["Loader"]; });
+
+/* harmony import */ var _footer_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./footer.component */ "./resources/js/components/footer.component.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Footer", function() { return _footer_component__WEBPACK_IMPORTED_MODULE_3__["Footer"]; });
 
 
 
 
+
+
+/***/ }),
+
+/***/ "./resources/js/components/loader.component.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/loader.component.js ***!
+  \*****************************************************/
+/*! exports provided: Loader */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Loader", function() { return Loader; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var loaderStyle = {
+  position: "fixed",
+  zIndex: 100,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  backgroundColor: "white",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  top: 0
+};
+var spinnerStyle = {
+  content: " ",
+  display: "block",
+  background: 0,
+  borderRadius: "50%",
+  width: "48px",
+  height: "48px",
+  margin: 0,
+  boxSizing: "border-box",
+  border: "2px solid #fff",
+  borderColor: "#3594fa transparent #3594fa transparent"
+};
+function Loader() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "Loader",
+    style: loaderStyle
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "spinner",
+    style: spinnerStyle
+  }));
+}
 
 /***/ }),
 
@@ -59069,7 +59097,7 @@ function Sidebar(_ref) {
     icon: "times"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "px-4 py-2"
-  }, "Filters will come here")));
+  }, "TODO: Filters")));
 }
 
 /***/ }),

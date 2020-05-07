@@ -4,6 +4,19 @@
 // Variables
 @import "variables";
 
+.spinner {
+    animation: spinner 0.75s ease-in-out infinite;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 html {
     font-size: 17px;
     letter-spacing: 1.5px;
