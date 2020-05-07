@@ -1,0 +1,168 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+
+// Variables
+@import "variables";
+
+html {
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    font-family: Nunito, Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
+    .Navbar {
+        .Sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #0006;
+            z-index: 11;
+            .Menu {
+                color: $blue;
+                width: 300px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                background-color: white;
+            }
+        }
+    }
+
+    .HomePage {
+        .ItemCard {
+            position: relative;
+            max-width: 480px;
+            .status {
+                padding: 2px 2px 2px 0;
+                color: white;
+                position: absolute;
+                top: 10px;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                font-size: 10px;
+                display: block;
+                &.funded {
+                    background-color: #f4b233;
+                }
+                &.waitlist {
+                    background-color: #00da89;
+                }
+                span {
+                    border: 1px dashed white;
+                    border-radius: 5px;
+                    padding: 2px 5px;
+                    display: block;
+                    text-transform: uppercase;
+                    border-left: none;
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+            .info {
+                letter-spacing: normal;
+                width: 206px;
+                flex-shrink: 0;
+                svg {
+                    color: $blue;
+                }
+                .price-and-size {
+                    .cost-text {
+                        font-size: 9px;
+                        color: $gray;
+                        line-height: 0;
+                        padding-bottom: 9px;
+                    }
+                    .price,
+                    .size {
+                        flex: 1 0 auto;
+                    }
+                    .size {
+                        color: $gray;
+                    }
+                    .size-text {
+                        line-height: 0;
+                        padding-bottom: 9px;
+                        font-size: 9px;
+                        color: $gray;
+                    }
+                }
+                .name-and-address {
+                    .address {
+                        color: $gray;
+                        font-size: 10px;
+                    }
+                }
+                .fund-investor-days {
+                    background-color: $light-blue;
+                    div {
+                        flex: 1 0 auto;
+                        .stats {
+                            color: $blue;
+                            font-weight: 700;
+                            font-size: 14px;
+                        }
+                        .stats-text {
+                            line-height: 0;
+                            padding-bottom: 8px;
+                            color: $gray;
+                            display: block;
+                            font-size: 9px;
+                        }
+                    }
+                }
+            }
+            .yield-target-investment {
+                color: white;
+                background-color: $blue;
+                .extra {
+                    display: flex;
+                    align-items: center;
+                    flex: 1 0 auto;
+                    .extra-content {
+                        font-size: 14px;
+                        flex-grow: 1;
+                        padding: 0.5rem;
+                        .extra-text {
+                            font-size: 12px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .Footer {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $blue;
+        .FooterIcon {
+            flex: 1 0 auto;
+            &:not(:first-child) {
+                border-left: 1px solid #fff3;
+            }
+            &.active,
+            &:hover {
+                background-color: #00da89;
+            }
+            svg {
+                font-size: 24px;
+            }
+            span {
+                font-size: 14px;
+            }
+            @media only screen and (max-width: 480px) {
+                svg {
+                    font-size: 20px;
+                }
+                span {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
