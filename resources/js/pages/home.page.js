@@ -19,6 +19,7 @@ export default function HomePage({ items = [] }) {
                         }
                         <div className="flex">
                             <div className="item-image flex items-center">
+                                <div className="item-image-bg" style={{ backgroundImage: 'url(' + item.images[0] + ')' }}></div>
                                 <img src={item.images[0]} className="flex-1" />
                             </div>
                             <div className="info flex flex-col justify-between">

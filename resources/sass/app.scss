@@ -55,6 +55,7 @@ html {
                 border-top-right-radius: 5px;
                 border-bottom-right-radius: 5px;
                 font-size: 10px;
+                z-index: 1;
                 display: block;
                 &.funded {
                     background-color: #f4b233;
@@ -73,6 +74,22 @@ html {
                     border-bottom-left-radius: 0;
                 }
             }
+                .item-image {
+                    position: relative;
+                    overflow: hidden;
+                    .item-image-bg {
+                        background-size: cover;
+                        background-position: center center;
+                        background-repeat: no-repeat no-repeat;
+                        position: absolute;
+                        z-index: -1;
+                        top: -5px;
+                        left: -5px;
+                        right: -5px;
+                        bottom: -5px;
+                        filter: blur(3px);
+                    }
+                }
             .info {
                 letter-spacing: normal;
                 width: 206px;

@@ -66,6 +66,7 @@ html .HomePage .ItemCard .status {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   font-size: 10px;
+  z-index: 1;
   display: block;
 }
 
@@ -86,6 +87,25 @@ html .HomePage .ItemCard .status span {
   border-left: none;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+html .HomePage .ItemCard .item-image {
+  position: relative;
+  overflow: hidden;
+}
+
+html .HomePage .ItemCard .item-image .item-image-bg {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat no-repeat;
+  position: absolute;
+  z-index: -1;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
 }
 
 html .HomePage .ItemCard .info {
