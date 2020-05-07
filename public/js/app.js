@@ -58947,7 +58947,7 @@ function FooterIcon(_ref) {
       className = _ref$className === void 0 ? "" : _ref$className;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "/",
-    className: "FooterIcon text-white flex flex-col items-center py-3 " + className
+    className: "FooterIcon text-white flex flex-col items-center md:py-3 py-1 " + className
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"], {
     icon: icon
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -59019,7 +59019,7 @@ function Navbar() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "left-menu"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "px-2 cursor-pointer",
+    className: "px-2 cursor-pointer focus:outline-none",
     onClick: function onClick() {
       setIsSidebarVisible(!isSidebarVisible);
     }
@@ -59031,7 +59031,7 @@ function Navbar() {
   }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "px-2 cursor-pointer",
+    className: "px-2 cursor-pointer focus:outline-none",
     onClick: function onClick() {
       setIsSidebarVisible(!isSidebarVisible);
     }
@@ -59093,18 +59093,20 @@ function HomePage(_ref) {
   var _ref$items = _ref.items,
       items = _ref$items === void 0 ? [] : _ref$items;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "HomePage p-2 flex flex-wrap justify-center pb-20"
+    className: "HomePage p-2 flex flex-wrap justify-center md:pb-20 pb-12"
   }, items.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: item.id,
-      className: "ItemCard m-2 shadow rounded-lg overflow-hidden border"
+      className: "ItemCard m-2 shadow rounded-lg overflow-hidden border border-b-0"
     }, item.status === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "status funded shadow"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Fully Funded")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "status waitlist shadow"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Join Waitlist")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "flex"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "item-image flex items-center"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       src: item.images[0],
       className: "flex-1"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -59112,9 +59114,9 @@ function HomePage(_ref) {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "price-and-size flex"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "flex price p-2 border border-t-0 border-l-0"
+      className: "flex price p-1 md:p-2 border border-t-0 border-l-0"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "px-1"
+      className: "px-md-1 px-0"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"], {
       icon: "rupee-sign",
       className: "text-xs"
@@ -59125,17 +59127,17 @@ function HomePage(_ref) {
     }, item.cost), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "cost-text text-xs"
     }, "Per Square Feet"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "flex size p-2 border border-t-0 border-l-0 border-r-0"
+      className: "flex size p-1 md:p-2 border border-t-0 border-l-0 border-r-0"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "px-1"
+      className: "px-md-1 px-0"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "size font-extrabold"
     }, item.area), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "size-text text-xs"
     }, "Total Square Feet")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "name-and-address flex p-2 pb-0"
+      className: "name-and-address flex md:p-2 px-1 pb-0"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "px-1"
+      className: "px-md-1 px-0"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"], {
       icon: "map-marker-alt",
       className: "text-xs"
@@ -59148,19 +59150,19 @@ function HomePage(_ref) {
     }, item.address)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "fund-investor-days flex"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "px-3 py-0"
+      className: "md:px-3 px-2 py-0"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "stats"
     }, item.fundingPercentage, "%", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "stats-text"
     }, "Funded"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "px-2 py-0"
+      className: "md:px-2 px-1 py-0"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "stats"
     }, item.investorsCount, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "stats-text"
     }, "Investors"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "px-2 py-0"
+      className: "md:px-2 px-1 py-0"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "stats"
     }, item.daysRemaining, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {

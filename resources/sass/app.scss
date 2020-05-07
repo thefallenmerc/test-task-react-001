@@ -165,4 +165,52 @@ html {
             }
         }
     }
+
+    @media only screen and (max-width: 540px) {
+        letter-spacing: 0;
+        .HomePage {
+            .ItemCard {
+                margin: 0;
+                margin-bottom: 1rem;
+                .info {
+                    width: 150px;
+                    .price-and-size {
+                        .cost-text,
+                        .size-text {
+                            font-size: 8px;
+                        }
+                    }
+                    .name-and-address {
+                        .name {
+                            font-size: 12px;
+                        }
+                        .address {
+                            font-size: 9px;
+                        }
+                    }
+                    .fund-investor-days {
+                        div {
+                            .stats {
+                                font-size: 12px;
+                                .stats-text {
+                                    font-size: 8px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .yield-target-investment {
+                    .extra {
+                        .extra-content {
+                            font-size: 12px;
+                            padding-right: 0;
+                            .extra-text {
+                                font-size: 9px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

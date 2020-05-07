@@ -7,13 +7,13 @@ export function Navbar() {
     return (
         <div className="Navbar py-4 px-2 bg-xblue text-white font-bold shadow flex justify-between">
             <div className="left-menu">
-                <span className="px-2 cursor-pointer" onClick={() => { setIsSidebarVisible(!isSidebarVisible) }}>
+                <span className="px-2 cursor-pointer focus:outline-none" onClick={() => { setIsSidebarVisible(!isSidebarVisible) }}>
                     <FontAwesomeIcon icon="bars" />
                 </span>
                 <a href="/" className="pl-2">Home</a>
             </div>
             <div className="right">
-                <span className="px-2 cursor-pointer" onClick={() => { setIsSidebarVisible(!isSidebarVisible) }}>
+                <span className="px-2 cursor-pointer focus:outline-none" onClick={() => { setIsSidebarVisible(!isSidebarVisible) }}>
                     <FontAwesomeIcon icon="filter" />
                 </span>
             </div>

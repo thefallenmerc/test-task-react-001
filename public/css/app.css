@@ -182,3 +182,48 @@ html .Footer .FooterIcon span {
     font-size: 12px;
   }
 }
+
+@media only screen and (max-width: 540px) {
+  html {
+    letter-spacing: 0;
+  }
+
+  html .HomePage .ItemCard {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  html .HomePage .ItemCard .info {
+    width: 150px;
+  }
+
+  html .HomePage .ItemCard .info .price-and-size .cost-text,
+html .HomePage .ItemCard .info .price-and-size .size-text {
+    font-size: 8px;
+  }
+
+  html .HomePage .ItemCard .info .name-and-address .name {
+    font-size: 12px;
+  }
+
+  html .HomePage .ItemCard .info .name-and-address .address {
+    font-size: 9px;
+  }
+
+  html .HomePage .ItemCard .info .fund-investor-days div .stats {
+    font-size: 12px;
+  }
+
+  html .HomePage .ItemCard .info .fund-investor-days div .stats .stats-text {
+    font-size: 8px;
+  }
+
+  html .HomePage .ItemCard .yield-target-investment .extra .extra-content {
+    font-size: 12px;
+    padding-right: 0;
+  }
+
+  html .HomePage .ItemCard .yield-target-investment .extra .extra-content .extra-text {
+    font-size: 9px;
+  }
+}

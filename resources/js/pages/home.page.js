@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function HomePage({ items = [] }) {
     return (
-        <div className="HomePage p-2 flex flex-wrap justify-center pb-20">
+        <div className="HomePage p-2 flex flex-wrap justify-center md:pb-20 pb-12">
             {
                 items.map(item => (
-                    <div key={item.id} className="ItemCard m-2 shadow rounded-lg overflow-hidden border">
+                    <div key={item.id} className="ItemCard m-2 shadow rounded-lg overflow-hidden border border-b-0">
                         {
                             item.status === 0 ?
                                 <span className="status funded shadow">
@@ -17,14 +17,14 @@ export default function HomePage({ items = [] }) {
                                 </span>
                         }
                         <div className="flex">
-                            <div>
+                            <div className="item-image flex items-center">
                                 <img src={item.images[0]} className="flex-1" />
                             </div>
                             <div className="info flex flex-col justify-between">
                                 <div>
                                     <div className="price-and-size flex">
-                                        <div className="flex price p-2 border border-t-0 border-l-0">
-                                            <div className="px-1">
+                                        <div className="flex price p-1 md:p-2 border border-t-0 border-l-0">
+                                            <div className="px-md-1 px-0">
                                                 <FontAwesomeIcon icon="rupee-sign" className="text-xs" />
                                             </div>
                                             <div className="flex-grow pl-1">
@@ -32,15 +32,15 @@ export default function HomePage({ items = [] }) {
                                                 <div className="cost-text text-xs">Per Square Feet</div>
                                             </div>
                                         </div>
-                                        <div className="flex size p-2 border border-t-0 border-l-0 border-r-0">
-                                            <div className="px-1">
+                                        <div className="flex size p-1 md:p-2 border border-t-0 border-l-0 border-r-0">
+                                            <div className="px-md-1 px-0">
                                                 <div className="size font-extrabold">{item.area}</div>
                                                 <div className="size-text text-xs">Total Square Feet</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="name-and-address flex p-2 pb-0">
-                                        <div className="px-1">
+                                    <div className="name-and-address flex md:p-2 px-1 pb-0">
+                                        <div className="px-md-1 px-0">
                                             <FontAwesomeIcon icon="map-marker-alt" className="text-xs" />
                                         </div>
                                         <div className="flex-grow p-1">
@@ -50,19 +50,19 @@ export default function HomePage({ items = [] }) {
                                     </div>
                                 </div>
                                 <div className="fund-investor-days flex">
-                                    <div className="px-3 py-0">
+                                    <div className="md:px-3 px-2 py-0">
                                         <span className="stats">
                                             {item.fundingPercentage}%
                                             <span className="stats-text">Funded</span>
                                         </span>
                                     </div>
-                                    <div className="px-2 py-0">
+                                    <div className="md:px-2 px-1 py-0">
                                         <span className="stats">
                                             {item.investorsCount}
                                             <span className="stats-text">Investors</span>
                                         </span>
                                     </div>
-                                    <div className="px-2 py-0">
+                                    <div className="md:px-2 px-1 py-0">
                                         <span className="stats">
                                             {item.daysRemaining}
                                             <span className="stats-text">Days To Go</span>

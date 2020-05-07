@@ -14,7 +14,7 @@ export function Footer() {
 
 function FooterIcon({ icon, text, className = "" }) {
     return (
-        <a href="/" className={"FooterIcon text-white flex flex-col items-center py-3 " + className}>
+        <a href="/" className={"FooterIcon text-white flex flex-col items-center md:py-3 py-1 " + className}>
             <FontAwesomeIcon icon={icon} />
             <span className="mt-2">{text}</span>
         </a>
