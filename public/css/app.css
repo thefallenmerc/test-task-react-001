@@ -191,6 +191,7 @@ html .HomePage .ItemCard .yield-target-investment .extra .extra-content .extra-t
 }
 
 html .Footer {
+  z-index: 5;
   position: fixed;
   left: 0;
   right: 0;
