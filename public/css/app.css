@@ -53,6 +53,10 @@ html .Navbar .Sidebar .Menu {
   background-color: white;
 }
 
+html .Navbar .Sidebar .Menu .filters .filter {
+  transition: all 0.4s;
+}
+
 html .HomePage .ItemCard {
   position: relative;
   max-width: 480px;

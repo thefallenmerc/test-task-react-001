@@ -25,7 +25,7 @@ class ItemsController extends Controller
             'daysRemaining' => '25',
             'rentalYield' => '9.11',
             'returnTarget' => '18.14',
-            'minimumInvestment' => '25,00,00',
+            'minimumInvestment' => '25,00,000',
         ], [
             'id' => 'PROPID2',
             'status' => 1,
@@ -44,7 +44,7 @@ class ItemsController extends Controller
             'daysRemaining' => '25',
             'rentalYield' => '9.11',
             'returnTarget' => '18.14',
-            'minimumInvestment' => '25,00,00',
+            'minimumInvestment' => '25,00,000',
         ], [
             'id' => 'PROPID13',
             'status' => 1,
@@ -63,7 +63,7 @@ class ItemsController extends Controller
             'daysRemaining' => '25',
             'rentalYield' => '9.11',
             'returnTarget' => '18.14',
-            'minimumInvestment' => '25,00,00',
+            'minimumInvestment' => '25,00,000',
         ], [
             'id' => 'PROPID11',
             'status' => 1,
@@ -82,7 +82,7 @@ class ItemsController extends Controller
             'daysRemaining' => '25',
             'rentalYield' => '9.11',
             'returnTarget' => '18.14',
-            'minimumInvestment' => '25,00,00',
+            'minimumInvestment' => '25,00,000',
         ],
     ];
 

@@ -58826,6 +58826,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _loader_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./loader.component */ "./resources/js/components/loader.component.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -58847,7 +58855,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_4__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faCheckSquare"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faCertificate"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faRupeeSign"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faMapMarkerAlt"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faWallet"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faChartLine"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faCoins"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faFilter"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faBars"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faTimes"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faBuilding"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faWarehouse"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faSnowflake"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faHome"]);
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_4__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faCheckSquare"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faCertificate"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faRupeeSign"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faMapMarkerAlt"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faWallet"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faChartLine"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faCoins"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faFilter"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faBars"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faTimes"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faBuilding"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faWarehouse"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faSnowflake"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faHome"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faAngleDown"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__["faAngleUp"]);
 function Root() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
       _useState2 = _slicedToArray(_useState, 2),
@@ -58859,6 +58867,18 @@ function Root() {
       items = _useState4[0],
       setItems = _useState4[1];
 
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('cost'),
+      _useState6 = _slicedToArray(_useState5, 2),
+      sortFilter = _useState6[0],
+      setSortFilter = _useState6[1]; // can be const
+
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      _useState8 = _slicedToArray(_useState7, 2),
+      sortFilterDirection = _useState8[0],
+      setSortFilterDirection = _useState8[1]; // true is ascending false is descending
+
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     axios__WEBPACK_IMPORTED_MODULE_7___default.a.get('/api/items').then(function (response) {
       setItems(response.data);
@@ -58868,10 +58888,25 @@ function Root() {
       setIsLoading(false);
     });
   }, []);
+
+  var sortedItems = _toConsumableArray(items).sort(function (a, b) {
+    // sort logic
+    if (sortFilterDirection) {
+      return a[sortFilter].replace(/,/g, '') - b[sortFilter].replace(/,/g, '');
+    } else {
+      return b[sortFilter].replace(/,/g, '') - a[sortFilter].replace(/,/g, '');
+    }
+  });
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "root"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_component__WEBPACK_IMPORTED_MODULE_2__["Navbar"], null), isLoading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_loader_component__WEBPACK_IMPORTED_MODULE_8__["Loader"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pages_home_page__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    items: items
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_component__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
+    sortFilter: sortFilter,
+    setSortFilter: setSortFilter,
+    sortFilterDirection: sortFilterDirection,
+    setSortFilterDirection: setSortFilterDirection
+  }), isLoading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_loader_component__WEBPACK_IMPORTED_MODULE_8__["Loader"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pages_home_page__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    items: sortedItems
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer_component__WEBPACK_IMPORTED_MODULE_3__["Footer"], null));
 }
 
@@ -59036,8 +59071,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-function Navbar() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+function Navbar(_ref) {
+  var sortFilter = _ref.sortFilter,
+      setSortFilter = _ref.setSortFilter,
+      sortFilterDirection = _ref.sortFilterDirection,
+      setSortFilterDirection = _ref.setSortFilterDirection;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
       _useState2 = _slicedToArray(_useState, 2),
       isSidebarVisible = _useState2[0],
       setIsSidebarVisible = _useState2[1];
@@ -59067,16 +59107,24 @@ function Navbar() {
     icon: "filter"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Sidebar, {
     isSidebarVisible: isSidebarVisible,
-    setIsSidebarVisible: setIsSidebarVisible
+    setIsSidebarVisible: setIsSidebarVisible,
+    sortFilter: sortFilter,
+    setSortFilter: setSortFilter,
+    sortFilterDirection: sortFilterDirection,
+    setSortFilterDirection: setSortFilterDirection
   }));
 }
 /**
  * Creates the sidebar menu 
  */
 
-function Sidebar(_ref) {
-  var isSidebarVisible = _ref.isSidebarVisible,
-      setIsSidebarVisible = _ref.setIsSidebarVisible;
+function Sidebar(_ref2) {
+  var isSidebarVisible = _ref2.isSidebarVisible,
+      setIsSidebarVisible = _ref2.setIsSidebarVisible,
+      sortFilter = _ref2.sortFilter,
+      setSortFilter = _ref2.setSortFilter,
+      sortFilterDirection = _ref2.sortFilterDirection,
+      setSortFilterDirection = _ref2.setSortFilterDirection;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "Sidebar",
     style: {
@@ -59096,8 +59144,60 @@ function Sidebar(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"], {
     icon: "times"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "px-4 py-2"
-  }, "TODO: Filters")));
+    className: "px-4 py-2 filters"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SortFilter, {
+    name: "cost",
+    sortFilter: sortFilter,
+    setSortFilter: setSortFilter,
+    sortFilterDirection: sortFilterDirection,
+    setSortFilterDirection: setSortFilterDirection,
+    isSidebarVisible: isSidebarVisible,
+    setIsSidebarVisible: setIsSidebarVisible
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SortFilter, {
+    name: "area",
+    sortFilter: sortFilter,
+    setSortFilter: setSortFilter,
+    sortFilterDirection: sortFilterDirection,
+    setSortFilterDirection: setSortFilterDirection,
+    isSidebarVisible: isSidebarVisible,
+    setIsSidebarVisible: setIsSidebarVisible
+  }))));
+}
+
+function SortFilter(_ref3) {
+  var _ref3$name = _ref3.name,
+      name = _ref3$name === void 0 ? '' : _ref3$name,
+      sortFilter = _ref3.sortFilter,
+      setSortFilter = _ref3.setSortFilter,
+      sortFilterDirection = _ref3.sortFilterDirection,
+      setSortFilterDirection = _ref3.setSortFilterDirection,
+      isSidebarVisible = _ref3.isSidebarVisible,
+      setIsSidebarVisible = _ref3.setIsSidebarVisible;
+  var isActive = sortFilter === name;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    title: isActive ? "Click to sort in " + (sortFilterDirection ? "descending" : "ascending") + " order" : "Click to sort according to this filter",
+    className: "filter rounded p-2 shadow hover:shadow-md flex justify-between mb-2 items-center cursor-pointer" + (isActive ? " bg-xblue text-white" : ""),
+    onClick: function onClick() {
+      if (isActive) {
+        setSortFilterDirection(!sortFilterDirection);
+      } else {
+        setSortFilter(name);
+        setSortFilterDirection(true);
+      }
+
+      setIsSidebarVisible(false);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "px-2 capitalize"
+  }, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "px-2"
+  }, isActive ? sortFilterDirection ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"], {
+    icon: "angle-up"
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"], {
+    icon: "angle-down"
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"], {
+    icon: "angle-up"
+  })));
 }
 
 /***/ }),

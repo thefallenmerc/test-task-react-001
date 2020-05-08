@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export function Navbar() {
-    const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+export function Navbar({
+    sortFilter,
+    setSortFilter,
+    sortFilterDirection,
+    setSortFilterDirection,
+}) {
+    const [isSidebarVisible, setIsSidebarVisible] = useState(true);
 
     return (
         <div className="Navbar py-4 px-2 bg-xblue text-white font-bold shadow flex justify-between">
@@ -17,7 +22,14 @@ export function Navbar() {
                     <FontAwesomeIcon icon="filter" />
                 </span>
             </div>
-            <Sidebar isSidebarVisible={isSidebarVisible} setIsSidebarVisible={setIsSidebarVisible} />
+            <Sidebar
+                isSidebarVisible={isSidebarVisible}
+                setIsSidebarVisible={setIsSidebarVisible}
+                sortFilter={sortFilter}
+                setSortFilter={setSortFilter}
+                sortFilterDirection={sortFilterDirection}
+                setSortFilterDirection={setSortFilterDirection}
+            />
         </div>
     )
 }
@@ -25,7 +37,14 @@ export function Navbar() {
 /**
  * Creates the sidebar menu 
  */
-function Sidebar({ isSidebarVisible, setIsSidebarVisible }) {
+function Sidebar({
+    isSidebarVisible,
+    setIsSidebarVisible,
+    sortFilter,
+    setSortFilter,
+    sortFilterDirection,
+    setSortFilterDirection,
+}) {
 
     return (
         <div className="Sidebar" style={{ display: isSidebarVisible ? "block" : "none" }}>
@@ -38,10 +57,71 @@ function Sidebar({ isSidebarVisible, setIsSidebarVisible }) {
                         <FontAwesomeIcon icon="times" />
                     </span>
                 </div>
-                <div className="px-4 py-2">
-                    TODO: Filters
-                    </div>
+                <div className="px-4 py-2 filters">
+                    {/* you can add new filter by using key of the values from the recieved data, the value should be numeric though */}
+                    <SortFilter
+                        name="cost"
+                        sortFilter={sortFilter}
+                        setSortFilter={setSortFilter}
+                        sortFilterDirection={sortFilterDirection}
+                        setSortFilterDirection={setSortFilterDirection}
+                        isSidebarVisible={isSidebarVisible}
+                        setIsSidebarVisible={setIsSidebarVisible}
+                    />
+                    <SortFilter
+                        name="area"
+                        sortFilter={sortFilter}
+                        setSortFilter={setSortFilter}
+                        sortFilterDirection={sortFilterDirection}
+                        setSortFilterDirection={setSortFilterDirection}
+                        isSidebarVisible={isSidebarVisible}
+                        setIsSidebarVisible={setIsSidebarVisible}
+                    />
+                </div>
             </div>
+        </div>
+    )
+}
+
+function SortFilter({
+    name = '',
+    sortFilter,
+    setSortFilter,
+    sortFilterDirection,
+    setSortFilterDirection,
+    isSidebarVisible,
+    setIsSidebarVisible,
+}) {
+    const isActive = sortFilter === name;
+    return (
+        <div
+            title={
+                isActive ?
+                    "Click to sort in " + (sortFilterDirection ? "descending" : "ascending") + " order" :
+                    "Click to sort according to this filter"
+            }
+            className={
+                "filter rounded p-2 shadow hover:shadow-md flex justify-between mb-2 items-center cursor-pointer" + (isActive ? " bg-xblue text-white" : "")
+            }
+            onClick={() => {
+                if (isActive) {
+                    setSortFilterDirection(!sortFilterDirection);
+                } else {
+                    setSortFilter(name); setSortFilterDirection(true);
+                }
+                setIsSidebarVisible(false);
+            }}
+        >
+            <span className="px-2 capitalize">{name}</span>
+            <span className="px-2">
+                {
+                    isActive ?
+                        sortFilterDirection ?
+                            <FontAwesomeIcon icon="angle-up" /> :
+                            <FontAwesomeIcon icon="angle-down" /> :
+                        <FontAwesomeIcon icon="angle-up" />
+                }
+            </span>
         </div>
     )
 }

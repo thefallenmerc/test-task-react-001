@@ -4,16 +4,18 @@ import { Navbar } from './navbar.component';
 import { Footer } from './footer.component';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-import { faCheckSquare, faCoffee, faCertificate, faRupeeSign, faMapMarker, faMapMarkerAlt, faWallet, faChartLine, faCoins, faFilter, faBars, faTimes, faBuilding, faWarehouse, faSnowflake, faHome } from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faCoffee, faCertificate, faRupeeSign, faMapMarker, faMapMarkerAlt, faWallet, faChartLine, faCoins, faFilter, faBars, faTimes, faBuilding, faWarehouse, faSnowflake, faHome, faArrowDown, faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons'
 import HomePage from '../pages/home.page';
 import Axios from 'axios';
 import { Loader } from './loader.component';
 
-library.add(faCheckSquare, faCertificate, faRupeeSign, faMapMarkerAlt, faWallet, faChartLine, faCoins, faFilter, faBars, faTimes, faBuilding, faWarehouse, faSnowflake, faHome);
+library.add(faCheckSquare, faCertificate, faRupeeSign, faMapMarkerAlt, faWallet, faChartLine, faCoins, faFilter, faBars, faTimes, faBuilding, faWarehouse, faSnowflake, faHome, faAngleDown, faAngleUp);
 
 export function Root() {
     const [isLoading, setIsLoading] = useState(true);
     const [items, setItems] = useState([]);
+    const [sortFilter, setSortFilter] = useState('cost'); // can be const
+    const [sortFilterDirection, setSortFilterDirection] = useState(true); // true is ascending false is descending
 
     useEffect(() => {
         Axios.get('/api/items')
@@ -28,15 +30,25 @@ export function Root() {
             });
     }, []);
 
+    const sortedItems = [...items].sort((a, b) => { // sort logic
+        if(sortFilterDirection) {
+            return a[sortFilter].replace(/,/g, '') - b[sortFilter].replace(/,/g, '');
+        } else {
+            return b[sortFilter].replace(/,/g, '') - a[sortFilter].replace(/,/g, '');
+        }
+    });
 
     return (
         <div className="root">
-            <Navbar />
+            <Navbar sortFilter={sortFilter}
+                setSortFilter={setSortFilter}
+                sortFilterDirection={sortFilterDirection}
+                setSortFilterDirection={setSortFilterDirection} />
             {
                 isLoading ?
                     <Loader />
                     :
-                    <HomePage items={items} />
+                    <HomePage items={sortedItems} />
             }
             <Footer />
         </div>
