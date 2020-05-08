@@ -59249,7 +59249,7 @@ function HomePage(_ref) {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "flex price p-1 md:p-2 border border-t-0 border-l-0"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "px-md-1 px-0"
+      className: "px-md-1 px-0 price-icon"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"], {
       icon: "rupee-sign",
       className: "text-xs"
@@ -59270,7 +59270,7 @@ function HomePage(_ref) {
     }, "Total Square Feet")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "name-and-address flex md:p-2 px-1 pb-0"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "px-md-1 px-0"
+      className: "px-md-1 px-0 location-icon"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"], {
       icon: "map-marker-alt",
       className: "text-xs"

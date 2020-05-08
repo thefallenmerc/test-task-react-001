@@ -26,7 +26,7 @@ export default function HomePage({ items = [] }) {
                                 <div>
                                     <div className="price-and-size flex">
                                         <div className="flex price p-1 md:p-2 border border-t-0 border-l-0">
-                                            <div className="px-md-1 px-0">
+                                            <div className="px-md-1 px-0 price-icon">
                                                 <FontAwesomeIcon icon="rupee-sign" className="text-xs" />
                                             </div>
                                             <div className="flex-grow pl-1">
@@ -42,7 +42,7 @@ export default function HomePage({ items = [] }) {
                                         </div>
                                     </div>
                                     <div className="name-and-address flex md:p-2 px-1 pb-0">
-                                        <div className="px-md-1 px-0">
+                                        <div className="px-md-1 px-0 location-icon">
                                             <FontAwesomeIcon icon="map-marker-alt" className="text-xs" />
                                         </div>
                                         <div className="flex-grow p-1">

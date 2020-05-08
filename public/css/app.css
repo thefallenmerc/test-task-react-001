@@ -247,9 +247,31 @@ html .Footer .FooterIcon span {
     width: 150px;
   }
 
+  html .HomePage .ItemCard .info .price-and-size .price-icon {
+    line-height: 13px;
+  }
+
+  html .HomePage .ItemCard .info .price-and-size .price-icon svg {
+    font-size: 10px;
+  }
+
+  html .HomePage .ItemCard .info .price-and-size .cost,
+html .HomePage .ItemCard .info .price-and-size .size {
+    font-size: 12px;
+  }
+
   html .HomePage .ItemCard .info .price-and-size .cost-text,
 html .HomePage .ItemCard .info .price-and-size .size-text {
+    line-height: 8px;
     font-size: 8px;
+  }
+
+  html .HomePage .ItemCard .info .name-and-address .location-icon {
+    line-height: 20px;
+  }
+
+  html .HomePage .ItemCard .info .name-and-address .location-icon svg {
+    font-size: 10px;
   }
 
   html .HomePage .ItemCard .info .name-and-address .name {
@@ -262,7 +284,7 @@ html .HomePage .ItemCard .info .price-and-size .size-text {
   }
 
   html .HomePage .ItemCard .info .fund-investor-days div .stats {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   html .HomePage .ItemCard .info .fund-investor-days div .stats .stats-text {
@@ -270,7 +292,7 @@ html .HomePage .ItemCard .info .price-and-size .size-text {
   }
 
   html .HomePage .ItemCard .yield-target-investment .extra .extra-content {
-    font-size: 12px;
+    font-size: 10px;
     padding-right: 0;
   }
 

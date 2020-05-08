@@ -44,7 +44,7 @@ html {
                         transition: all 0.4s;
                         &:hover {
                             // box-shadow: 0px 0px 5px 0px #3333;
-                        }   
+                        }
                     }
                 }
             }
@@ -82,22 +82,22 @@ html {
                     border-bottom-left-radius: 0;
                 }
             }
-                .item-image {
-                    position: relative;
-                    overflow: hidden;
-                    .item-image-bg {
-                        background-size: cover;
-                        background-position: center center;
-                        background-repeat: no-repeat no-repeat;
-                        position: absolute;
-                        z-index: -1;
-                        top: -5px;
-                        left: -5px;
-                        right: -5px;
-                        bottom: -5px;
-                        filter: blur(3px);
-                    }
+            .item-image {
+                position: relative;
+                overflow: hidden;
+                .item-image-bg {
+                    background-size: cover;
+                    background-position: center center;
+                    background-repeat: no-repeat no-repeat;
+                    position: absolute;
+                    z-index: -1;
+                    top: -5px;
+                    left: -5px;
+                    right: -5px;
+                    bottom: -5px;
+                    filter: blur(3px);
                 }
+            }
             .info {
                 letter-spacing: normal;
                 width: 206px;
@@ -214,12 +214,29 @@ html {
                 .info {
                     width: 150px;
                     .price-and-size {
+                        .price-icon {
+                                line-height: 13px;
+                            svg {
+                                font-size: 10px;
+                            }
+                        }
+                        .cost,
+                        .size {
+                            font-size: 12px;
+                        }
                         .cost-text,
                         .size-text {
+                            line-height: 8px;
                             font-size: 8px;
                         }
                     }
                     .name-and-address {
+                        .location-icon {
+                                line-height: 20px;
+                            svg {
+                                font-size: 10px;
+                            }
+                        }
                         .name {
                             font-size: 11px;
                         }
@@ -231,7 +248,7 @@ html {
                     .fund-investor-days {
                         div {
                             .stats {
-                                font-size: 12px;
+                                font-size: 10px;
                                 .stats-text {
                                     font-size: 8px;
                                 }
@@ -242,7 +259,7 @@ html {
                 .yield-target-investment {
                     .extra {
                         .extra-content {
-                            font-size: 12px;
+                            font-size: 10px;
                             padding-right: 0;
                             .extra-text {
                                 font-size: 9px;
