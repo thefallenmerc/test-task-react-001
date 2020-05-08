@@ -2,10 +2,9 @@
 
 Items list is a list of dummy Items with assumed fields using the data in screenshot provided
 
-#### Expected Design
+#### Screenshots
 
-![Expected](https://raw.githubusercontent.com/thefallenmerc/test-task-react-001/master/screenshots/expected.png)
+The design               |  The Output               |  Filters
+:-------------------------:|:-------------------------:|:-------------------------:
 
-#### Actual Outcome
-
-![Actual](https://raw.githubusercontent.com/thefallenmerc/test-task-react-001/master/screenshots/outcome-mobile.png)
+![Expected](https://raw.githubusercontent.com/thefallenmerc/test-task-react-001/master/screenshots/expected.png)|![Actual](https://raw.githubusercontent.com/thefallenmerc/test-task-react-001/master/screenshots/outcome-mobile.png)|![Actual](https://raw.githubusercontent.com/thefallenmerc/test-task-react-001/master/screenshots/outcome-mobile.png)|
