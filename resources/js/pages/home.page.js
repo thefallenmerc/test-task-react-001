@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function HomePage({ items = [] }) {
     return (
-        <div className="HomePage p-2 flex flex-wrap justify-center md:pb-20 pb-12">
+        <div className="HomePage px-2 py-4 flex flex-wrap justify-center md:pb-20 pb-12">
             {
                 items.map(item => (
 
-                    <div key={item.id} className="ItemCard m-2 shadow rounded-lg overflow-hidden border border-b-0">
+                    <div key={item.id} className="ItemCard m-2 shadow rounded-lg overflow-hidden border border-b-0 cursor-pointer">
                         {
                             item.status === 0 ?
-                                <span className="status funded shadow">
+                                <span className="status funded shadow-lg hover:shadow-xl">
                                     <span>Fully Funded</span>
                                 </span> :
                                 <span className="status waitlist shadow">

@@ -7,7 +7,7 @@ export function Navbar({
     sortFilterDirection,
     setSortFilterDirection,
 }) {
-    const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+    const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
     return (
         <div className="Navbar py-4 px-2 bg-xblue text-white font-bold shadow flex justify-between">

@@ -59077,7 +59077,7 @@ function Navbar(_ref) {
       sortFilterDirection = _ref.sortFilterDirection,
       setSortFilterDirection = _ref.setSortFilterDirection;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
       isSidebarVisible = _useState2[0],
       setIsSidebarVisible = _useState2[1];
@@ -59221,13 +59221,13 @@ function HomePage(_ref) {
   var _ref$items = _ref.items,
       items = _ref$items === void 0 ? [] : _ref$items;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "HomePage p-2 flex flex-wrap justify-center md:pb-20 pb-12"
+    className: "HomePage px-2 py-4 flex flex-wrap justify-center md:pb-20 pb-12"
   }, items.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: item.id,
-      className: "ItemCard m-2 shadow rounded-lg overflow-hidden border border-b-0"
+      className: "ItemCard m-2 shadow rounded-lg overflow-hidden border border-b-0 cursor-pointer"
     }, item.status === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      className: "status funded shadow"
+      className: "status funded shadow-lg hover:shadow-xl"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Fully Funded")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "status waitlist shadow"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Join Waitlist")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

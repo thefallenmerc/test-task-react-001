@@ -253,11 +253,12 @@ html .HomePage .ItemCard .info .price-and-size .size-text {
   }
 
   html .HomePage .ItemCard .info .name-and-address .name {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   html .HomePage .ItemCard .info .name-and-address .address {
     font-size: 9px;
+    line-height: 10px;
   }
 
   html .HomePage .ItemCard .info .fund-investor-days div .stats {
